@@ -66,3 +66,30 @@ datChatControllers.controller('ChatCtrl', ['$scope', '$routeParams', 'Chat', 'Ch
     	$scope.composeMessage = '';
     }
   }]);
+
+datChatControllers.controller('UserCtrl', ['$scope', 'Auth',
+    function ($scope, Auth) {
+        var credentials = {
+            email: 'kev.rowe@demcards.com',
+            password: 'password1',
+            password_confirmation: 'password1'
+        };
+        var config = {
+            headers: {
+                'X-HTTP-Method-Override': 'POST'
+            }
+        };
+
+        Auth.register(credentials).then(function(registeredUser) {
+            console.log(registeredUser); // => {id: 1, ect: '...'}
+        }, function(error) {
+            // Registration failed...
+            console.error(error);
+        });
+
+        $scope.$on('devise:new-registration', function(event, user) {
+            console.log('new-registration');
+            console.log(event);
+            console.log(user);
+        });
+    }]);

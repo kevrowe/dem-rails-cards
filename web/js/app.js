@@ -5,13 +5,17 @@
 var datChatApp = angular.module('datChatApp', [
   'ngRoute',
   'btford.socket-io',
+  'Devise',
   'datChatControllers',
   'datChatFilters',
   'datChatServices'
 ]);
 
-datChatApp.config(['$routeProvider',
-  function($routeProvider) {
+datChatApp.config(['$routeProvider', 'AuthProvider',
+  function($routeProvider, AuthProvider) {
+    AuthProvider.registerPath('http://localhost:8001/user.json');
+
+
     $routeProvider.
       when('/game', {
         templateUrl: 'partials/game-list.html',
@@ -24,6 +28,10 @@ datChatApp.config(['$routeProvider',
       when('/chat/:chatId', {
         templateUrl: 'partials/chat.html',
         controller: 'ChatCtrl'
+      }).
+      when('/user/new', {
+        templateUrl: 'partials/user-new.html',
+        controller: 'UserCtrl'
       }).
       otherwise({
         redirectTo: '/game'
