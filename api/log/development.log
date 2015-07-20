@@ -853,3 +853,17 @@ Processing by UserController#show as HTML
   Parameters: {"id"=>"1"}
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
 Completed 200 OK in 63ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2015-07-20 18:52:08 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 96ms (Views: 0.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/user" for 127.0.0.1 at 2015-07-20 18:52:18 +0100
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)

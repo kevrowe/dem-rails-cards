@@ -6,7 +6,7 @@
 
 # Web
 web/node_modules
-
+web/bower_components
 
 # Ignore bundler config.
 /.bundle
