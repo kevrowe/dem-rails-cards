@@ -19,3 +19,4 @@ web/bower_components
 /log/*
 !/log/.keep
 /tmp
+.DS_Store
