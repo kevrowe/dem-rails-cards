@@ -13,7 +13,7 @@ var datChatApp = angular.module('datChatApp', [
 
 datChatApp.config(['$routeProvider', 'AuthProvider',
   function($routeProvider, AuthProvider) {
-    AuthProvider.registerPath('http://localhost:8001/user.json');
+    AuthProvider.registerPath('http://localhost:8001/user');
 
 
     $routeProvider.

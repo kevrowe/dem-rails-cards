@@ -147,6 +147,3 @@ DEPENDENCIES
   spring
   sqlite3
   websocket-rails
-
-BUNDLED WITH
-   1.10.5
